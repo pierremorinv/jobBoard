@@ -1,3 +1,24 @@
+@import "./layout/header.scss";
 body {
-  background-color: blue;
+  .advertisements-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid black;
+    .advertisements-article {
+      border-radius: 15px;
+      margin: 1%;
+      width: 20%;
+      padding: 1%;
+      border: 1px solid black;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -ms-border-radius: 15px;
+      -o-border-radius: 15px;
+      background-color: rgb(32, 32, 135);
+    }
+    :hover {
+      background-color: white;
+    }
+  }
 }
