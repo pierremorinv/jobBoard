@@ -1,7 +1,8 @@
 @import "./Directory/pages/home.scss";
 @import "./Directory/layout/header.scss";
 @import "./Directory/layout/footer.scss";
+@import "./Directory/utils/variables.scss";
 
 body {
-  background-color: grey;
+  background-color: $primary-colory;
 }
