@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  color: blue;
+  border-bottom: 1px solid blue;
+  margin-bottom: 2%;
+  ul {
+    padding: 0%;
+    display: flex;
+    li {
+      margin-right: 1%;
+      list-style: none;
+    }
+  }
+}

@@ -1,16 +1,10 @@
-header {
-  color: red;
-  border-bottom: 1px solid blue;
-  margin-bottom: 2%;
-}
-
-body .advertisements-section {
+.advertisements-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   border: 1px solid black;
 }
-body .advertisements-section .advertisements-article {
+.advertisements-section .advertisements-article {
   border-radius: 15px;
   margin: 1%;
   width: 20%;
@@ -22,8 +16,28 @@ body .advertisements-section .advertisements-article {
   -o-border-radius: 15px;
   background-color: rgb(32, 32, 135);
 }
-body .advertisements-section :hover {
-  background-color: white;
+.advertisements-section :hover {
+  background-color: rgb(55, 48, 94);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  color: blue;
+  border-bottom: 1px solid blue;
+  margin-bottom: 2%;
+}
+header ul {
+  padding: 0%;
+  display: flex;
+}
+header ul li {
+  margin-right: 1%;
+  list-style: none;
+}
+
+body {
+  background-color: grey;
 }
 
 /*# sourceMappingURL=style.css.map */
