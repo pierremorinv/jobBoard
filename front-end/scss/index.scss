@@ -3,6 +3,8 @@
 @import "./Directory/layout/footer.scss";
 @import "./Directory/utils/variables.scss";
 
-body {
-  background-color: $secondary-color;
+body,
+html {
+  margin: 0%;
+  width: 100%;
 }
