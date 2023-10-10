@@ -1,50 +1,39 @@
-.main-content {
-  margin: 2%;
+h2 {
+  text-align: center;
+}
+.advertisements-section {
   display: flex;
-  justify-content: space-between;
-  .advertisements-section {
-    width: 55%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 2%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+  .advertisements-article {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    width: 28%;
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid black;
+    h3 {
+      margin: 0%;
+    }
+    p {
+      margin: 1%;
+    }
+    @media screen and (max-width: 1024px) {
+      width: 45%;
+    }
+    @media screen and (max-width: 724px) {
+      width: 100%;
+      margin: 1%;
+    }
+
     :hover {
       text-decoration: underline;
-    }
-    .advertisements-title {
-      background-color: $tertiary-color;
-      width: 100%;
-      border: 1px solid black;
-      h2 {
-        padding: 1%;
-      }
-    }
-
-    .advertisements-article {
-      border-radius: 15px;
-      margin: 1%;
-      padding: 1%;
-      border: 1px solid black;
-      -webkit-border-radius: 15px;
-      -moz-border-radius: 15px;
-      -ms-border-radius: 15px;
-      -o-border-radius: 15px;
-      width: 100%;
-    }
-  }
-  .my-candidate {
-    background-color: white;
-    .my-candidate-article {
-      padding: 2%;
-    }
-
-    .my-candidate-title {
-      background-color: $tertiary-color;
-      width: 100%;
-      padding-top: 1%;
-      padding-bottom: 1%;
-    }
-    h2 {
-      padding: 1%;
     }
   }
 }

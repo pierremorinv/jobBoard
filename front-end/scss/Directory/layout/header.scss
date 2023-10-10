@@ -1,5 +1,6 @@
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 3px solid black;
   background-color: $secondary-color;

@@ -1,54 +1,52 @@
-.main-content {
-  margin: 2%;
-  display: flex;
-  justify-content: space-between;
+h2 {
+  text-align: center;
 }
-.main-content .advertisements-section {
-  width: 55%;
+
+.advertisements-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  margin: 2%;
 }
-.main-content .advertisements-section :hover {
-  text-decoration: underline;
+@media screen and (max-width: 1024px) {
+  .advertisements-section {
+    width: 100%;
+  }
 }
-.main-content .advertisements-section .advertisements-title {
-  background-color: #d1b7fa;
-  width: 100%;
-  border: 1px solid black;
-}
-.main-content .advertisements-section .advertisements-title h2 {
-  padding: 1%;
-}
-.main-content .advertisements-section .advertisements-article {
+.advertisements-section .advertisements-article {
   border-radius: 15px;
-  margin: 1%;
-  padding: 1%;
-  border: 1px solid black;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-  width: 100%;
-}
-.main-content .my-candidate {
-  background-color: white;
-}
-.main-content .my-candidate .my-candidate-article {
-  padding: 2%;
-}
-.main-content .my-candidate .my-candidate-title {
-  background-color: #d1b7fa;
-  width: 100%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-.main-content .my-candidate h2 {
+  width: 28%;
   padding: 1%;
+  margin: 1%;
+  border: 1px solid black;
+}
+.advertisements-section .advertisements-article h3 {
+  margin: 0%;
+}
+.advertisements-section .advertisements-article p {
+  margin: 1%;
+}
+@media screen and (max-width: 1024px) {
+  .advertisements-section .advertisements-article {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 724px) {
+  .advertisements-section .advertisements-article {
+    width: 100%;
+    margin: 1%;
+  }
+}
+.advertisements-section .advertisements-article :hover {
+  text-decoration: underline;
 }
 
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 3px solid black;
   background-color: rgb(106, 162, 255);
@@ -82,11 +80,11 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
 }
 footer ul {
   padding: 0%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 footer ul :hover {
@@ -114,6 +112,7 @@ html {
 }
 
 body {
+  margin-bottom: 3%;
   background-color: rgb(246, 246, 246);
 }
 body li {

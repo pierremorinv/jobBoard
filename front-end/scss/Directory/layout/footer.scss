@@ -5,11 +5,11 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
 
   ul {
     padding: 0%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     :hover {
       background-color: $primary-color;
