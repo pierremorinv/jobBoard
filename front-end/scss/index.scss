@@ -1,10 +1,19 @@
+@import "./Directory/utils/variables.scss";
 @import "./Directory/pages/home.scss";
 @import "./Directory/layout/header.scss";
 @import "./Directory/layout/footer.scss";
-@import "./Directory/utils/variables.scss";
 
 body,
 html {
   margin: 0%;
   width: 100%;
+}
+body {
+  background-color: $primary-color;
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
 }

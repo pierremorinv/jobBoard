@@ -1,7 +1,4 @@
 .main-content {
-  h2 {
-    text-decoration: underline;
-  }
   margin: 2%;
   display: flex;
   justify-content: space-between;
@@ -10,6 +7,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    :hover {
+      text-decoration: underline;
+    }
+    .advertisements-title {
+      background-color: $tertiary-color;
+      width: 100%;
+      border: 1px solid black;
+      h2 {
+        padding: 1%;
+      }
+    }
 
     .advertisements-article {
       border-radius: 15px;
@@ -20,24 +28,23 @@
       -moz-border-radius: 15px;
       -ms-border-radius: 15px;
       -o-border-radius: 15px;
-      background-color: gray;
       width: 100%;
-      object-fit: contain;
     }
   }
   .my-candidate {
-    padding: 2%;
-
+    background-color: white;
     .my-candidate-article {
-      border: 1px solid black;
       padding: 2%;
-      margin-bottom: 5%;
-      border-radius: 15px;
-      -webkit-border-radius: 15px;
-      -moz-border-radius: 15px;
-      -ms-border-radius: 15px;
-      -o-border-radius: 15px;
-      background-color: grey;
+    }
+
+    .my-candidate-title {
+      background-color: $tertiary-color;
+      width: 100%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+    h2 {
+      padding: 1%;
     }
   }
 }
