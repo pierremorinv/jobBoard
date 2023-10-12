@@ -3,7 +3,8 @@ create table advertisements(
 type_of_job varchar(100),
 offer_date date,
 salary int,
-job_offer varchar(500)
+job_offer varchar(500),
+working_time int
 );
 create table companies(
 name_of_the_company varchar(100),

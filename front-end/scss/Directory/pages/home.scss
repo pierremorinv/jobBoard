@@ -4,17 +4,19 @@ h2 {
 .advertisements-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 2%;
   @media screen and (max-width: 1024px) {
     width: 100%;
   }
   .advertisements-article {
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    width: 28%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: white;
+    width: 55%;
     padding: 1%;
     margin: 1%;
     border: 1px solid black;
@@ -24,6 +26,19 @@ h2 {
     p {
       margin: 1%;
     }
+    button {
+      padding: 2%;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: black;
+      color: $primary-color;
+    }
     @media screen and (max-width: 1024px) {
       width: 45%;
     }
@@ -31,9 +46,57 @@ h2 {
       width: 100%;
       margin: 1%;
     }
-
-    :hover {
-      text-decoration: underline;
+    .advertisements-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      .advertisements-ul {
+        display: flex;
+        padding-left: 0%;
+      }
+      li {
+        padding-right: 5%;
+      }
     }
+
+    #collapse-content {
+      ul {
+        padding-bottom: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        #liInfo {
+          border: 1px solid black;
+          border-radius: 15px;
+          -webkit-border-radius: 15px;
+          -moz-border-radius: 15px;
+          -ms-border-radius: 15px;
+          -o-border-radius: 15px;
+        }
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        #liInfo:hover {
+          background-color: black;
+          color: $primary-color;
+        }
+        li {
+          padding-right: 5%;
+          padding: 2%;
+          margin: 1%;
+        }
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+  :hover {
+    background-color: $primary-color;
   }
 }

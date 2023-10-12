@@ -5,6 +5,7 @@ h2 {
 .advertisements-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 2%;
 }
 @media screen and (max-width: 1024px) {
@@ -13,12 +14,13 @@ h2 {
   }
 }
 .advertisements-section .advertisements-article {
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  width: 28%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-color: white;
+  width: 55%;
   padding: 1%;
   margin: 1%;
   border: 1px solid black;
@@ -28,6 +30,19 @@ h2 {
 }
 .advertisements-section .advertisements-article p {
   margin: 1%;
+}
+.advertisements-section .advertisements-article button {
+  padding: 2%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.advertisements-section .advertisements-article button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: rgb(246, 246, 246);
 }
 @media screen and (max-width: 1024px) {
   .advertisements-section .advertisements-article {
@@ -40,8 +55,54 @@ h2 {
     margin: 1%;
   }
 }
-.advertisements-section .advertisements-article :hover {
-  text-decoration: underline;
+.advertisements-section .advertisements-article .advertisements-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.advertisements-section .advertisements-article .advertisements-content .advertisements-ul {
+  display: flex;
+  padding-left: 0%;
+}
+.advertisements-section .advertisements-article .advertisements-content li {
+  padding-right: 5%;
+}
+.advertisements-section .advertisements-article #collapse-content ul {
+  padding-bottom: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.advertisements-section .advertisements-article #collapse-content ul #liInfo {
+  border: 1px solid black;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.advertisements-section .advertisements-article #collapse-content ul #liInfo:hover {
+  background-color: black;
+  color: rgb(246, 246, 246);
+}
+.advertisements-section .advertisements-article #collapse-content ul li {
+  padding-right: 5%;
+  padding: 2%;
+  margin: 1%;
+}
+.advertisements-section .advertisements-article #collapse-content p {
+  text-align: center;
+}
+.advertisements-section :hover {
+  background-color: rgb(246, 246, 246);
 }
 
 header {
@@ -76,10 +137,6 @@ header nav ul li a {
 footer {
   border-top: 1px solid black;
   background-color: rgb(246, 246, 246);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 footer ul {
   padding: 0%;
