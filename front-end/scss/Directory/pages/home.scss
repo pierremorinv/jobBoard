@@ -10,6 +10,7 @@ h2 {
     width: 100%;
   }
   .advertisements-article {
+    @include myBorderShadow;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -19,7 +20,7 @@ h2 {
     width: 55%;
     padding: 1%;
     margin: 1%;
-    border: 1px solid black;
+
     h3 {
       margin: 0%;
     }
@@ -27,7 +28,9 @@ h2 {
       margin: 1%;
     }
     button {
+      @include myBorderShadow;
       padding: 2%;
+      border: 1px solid black;
       border-radius: 10px;
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
