@@ -72,7 +72,7 @@ h2 {
         flex-wrap: wrap;
         justify-content: space-around;
         #liInfo {
-          border: 1px solid black;
+          @include myBorderShadow;
           border-radius: 15px;
           -webkit-border-radius: 15px;
           -moz-border-radius: 15px;
