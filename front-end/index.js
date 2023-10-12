@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           articleDescription.appendChild(ul);
           articleDescription.appendChild(titleContent);
-          articleDescription.append(ul2);
+          articleDescription.appendChild(ul2);
 
           let article = button.closest(".advertisements-content");
 
@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
           article.insertAdjacentElement("afterend", articleDescription);
           button.dataset.clicked = "true";
         });
+
+        const buttonSubmit = document.createElement("button");
+        buttonSubmit.id = "button-submit";
+        buttonSubmit.innerText = "Postuler";
+
+        articleDescription.appendChild(buttonSubmit);
       }
     });
   });
