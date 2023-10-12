@@ -5,6 +5,10 @@ header {
   border-bottom: 3px solid black;
   background-color: $secondary-color;
   margin-bottom: 2%;
+
+  @media screen and (max-width: 430px) {
+    justify-content: center;
+  }
   h1 {
     margin-left: 2%;
   }

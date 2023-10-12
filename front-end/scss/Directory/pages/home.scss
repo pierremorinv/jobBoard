@@ -5,9 +5,10 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 2%;
+  margin: 1%;
   @media screen and (max-width: 1024px) {
-    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
   .advertisements-article {
     @include myBorderShadow;
@@ -43,7 +44,7 @@ h2 {
       color: $primary-color;
     }
     @media screen and (max-width: 1024px) {
-      width: 45%;
+      width: 100%;
     }
     @media screen and (max-width: 724px) {
       width: 100%;
@@ -56,6 +57,7 @@ h2 {
       align-items: center;
       .advertisements-ul {
         display: flex;
+        flex-wrap: wrap;
         padding-left: 0%;
       }
       li {
