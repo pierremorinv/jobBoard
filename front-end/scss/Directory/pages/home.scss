@@ -45,11 +45,9 @@ h2 {
     }
     @media screen and (max-width: 1024px) {
       width: 100%;
+      margin: 2%;
     }
-    @media screen and (max-width: 724px) {
-      width: 100%;
-      margin: 1%;
-    }
+
     .advertisements-content {
       display: flex;
       flex-wrap: wrap;
@@ -57,8 +55,10 @@ h2 {
       align-items: center;
       .advertisements-ul {
         display: flex;
-        flex-wrap: wrap;
         padding-left: 0%;
+        @media screen and (max-width: 1024px) {
+          flex-wrap: wrap;
+        }
       }
       li {
         padding-right: 5%;

@@ -50,12 +50,7 @@ h2 {
 @media screen and (max-width: 1024px) {
   .advertisements-section .advertisements-article {
     width: 100%;
-  }
-}
-@media screen and (max-width: 724px) {
-  .advertisements-section .advertisements-article {
-    width: 100%;
-    margin: 1%;
+    margin: 2%;
   }
 }
 .advertisements-section .advertisements-article .advertisements-content {
@@ -66,8 +61,12 @@ h2 {
 }
 .advertisements-section .advertisements-article .advertisements-content .advertisements-ul {
   display: flex;
-  flex-wrap: wrap;
   padding-left: 0%;
+}
+@media screen and (max-width: 1024px) {
+  .advertisements-section .advertisements-article .advertisements-content .advertisements-ul {
+    flex-wrap: wrap;
+  }
 }
 .advertisements-section .advertisements-article .advertisements-content li {
   padding-right: 5%;
