@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   let buttons = document.querySelectorAll("button");
-  let forms = document.querySelectorAll("form");
   let contentVisible = false;
   let contentForm = false;
+  let body = document.body;
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -65,6 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (contentForm === false) {
               form.style.display = "block";
               button.dataset.clicked = "true";
+              body.style.opacity = "0.5";
+              form.style.opacity = "1";
               contentForm = true;
             } else {
               form.style.display = "none";
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
           form.style.display = "none";
           button.dataset.clicked = "false";
         }
-        contentVisible = false; // Définissez l'état du contenu comme masqué
+        contentVisible = false;
         contentForm = false;
       }
     });

@@ -11,6 +11,7 @@ h2 {
     margin-right: 2%;
   }
   .advertisements-article {
+    position: relative;
     @include myBorderShadow;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -111,9 +112,14 @@ h2 {
 }
 form {
   @include myBorderShadow;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: none;
-  padding: 1%;
-  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
   border-radius: 15px;
   border: 1px solid black;
   -webkit-border-radius: 15px;
@@ -121,7 +127,8 @@ form {
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   margin: 0 auto;
-  width: 50%;
+  background-color: white;
+  z-index: 999;
   .center-button {
     @include myBorderShadow;
     margin: 10px auto; /* Centrer le bouton horizontalement */
