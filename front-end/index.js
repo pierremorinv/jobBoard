@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Tu feras preuve d'adaptabilité et d'ouverture dans la découverte de nouvelles technologies (React, Angular, MongoDB, Neo4j, Vertx...).",
             "Un accent fort sera mis sur la qualité, la maintenabilité et l'industrialisation des processus (Gitlab CI, SonarQube, Docker, DEVOPS, Tests automatisés...).",
           ];
+          let article = button.closest(".advertisements-content");
           listMissions.forEach((liMission) => {
             const li2 = document.createElement("li");
             li2.textContent = liMission;
@@ -44,46 +45,45 @@ document.addEventListener("DOMContentLoaded", () => {
             articleDescription.appendChild(titleContent);
             articleDescription.appendChild(ul2);
 
-            let article = button.closest(".advertisements-content");
-
             // Insérez la div articleDescription après la div advertisements-content
             article.insertAdjacentElement("afterend", articleDescription);
             button.dataset.clicked = "true";
             contentVisible = true;
           });
 
+          let form = article.querySelector("form");
           const buttonSubmit = document.createElement("button");
           buttonSubmit.id = "button-submit";
           buttonSubmit.innerText = "Postuler";
           buttonSubmit.style.marginBottom = "2%";
 
           articleDescription.appendChild(buttonSubmit);
+
           buttonSubmit.addEventListener("click", () => {
+            let article = button.closest(".advertisements-article");
+            let form = article.querySelector("form");
             if (contentForm === false) {
-              forms.forEach((form) => {
-                form.style.display = "block";
-                contentForm = true;
-              });
+              form.style.display = "block";
+              button.dataset.clicked = "true";
+              contentForm = true;
             } else {
-              forms.forEach((form) => {
-                form.style.display = "none";
-                contentForm = false;
-              });
+              form.style.display = "none";
+              button.dataset.clicked = "false";
+              contentForm = false;
             }
           });
         }
       } else {
-        let articleDescription = document.getElementById("collapse-content");
-        let forms = document.querySelectorAll("form");
-
-        if (articleDescription) {
-          articleDescription.remove();
-          forms.forEach((form) => {
-            form.style.display = "none";
-          });
+        let collapseContent = document.getElementById("collapse-content");
+        let article = button.closest(".advertisements-article");
+        let form = article.querySelector("form");
+        if (collapseContent) {
+          collapseContent.remove();
+          form.style.display = "none";
           button.dataset.clicked = "false";
         }
         contentVisible = false; // Définissez l'état du contenu comme masqué
+        contentForm = false;
       }
     });
   });
