@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      // Vérifiez si l'article n'a pas encore été affiché
       if (contentVisible === false) {
         if (button.dataset.clicked !== "true") {
           let articleDescription = document.createElement("div");
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
           buttonSubmit.style.marginBottom = "2%";
 
           articleDescription.appendChild(buttonSubmit);
-          buttonSubmit.addEventListener("click", (e) => {
+          buttonSubmit.addEventListener("click", () => {
             if (contentForm === false) {
               forms.forEach((form) => {
                 form.style.display = "block";
