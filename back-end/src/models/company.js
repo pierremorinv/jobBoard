@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define("Companie", {
+  return sequelize.define("Company", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    numberOfemployees: {
+    numberOfEmployees: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    pictureoftheCompany: {
+    pictureOfTheCompany: {
       type: DataTypes.STRING,
       allowNull: false,
     },
