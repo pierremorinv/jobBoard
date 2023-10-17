@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let buttons = document.querySelectorAll("button");
   let contentVisible = false;
   let contentForm = false;
-  let body = document.body;
+  let body = document.querySelector("body");
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (contentForm === false) {
               form.style.display = "block";
               button.dataset.clicked = "true";
-              body.style.opacity = "0.5";
+              body.style.opacity = "1";
               form.style.opacity = "1";
               contentForm = true;
             } else {

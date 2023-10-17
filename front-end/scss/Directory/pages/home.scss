@@ -119,6 +119,7 @@ form {
   display: none;
   justify-content: center;
   align-items: center;
+
   padding: 3%;
   border-radius: 15px;
   border: 1px solid black;
@@ -136,8 +137,6 @@ form {
   }
   div {
     padding: 5%;
-    display: flex;
-    flex-direction: column;
     input {
       border-radius: 5px;
       margin-top: 1%;
