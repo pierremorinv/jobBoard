@@ -18,7 +18,7 @@
       </header>
       <h2 class="advertisements-title">Les entreprises qui recrutent</h2> 
         <section class="advertisements-section"> 
-                   <form class="form" id="form" name="form">
+                   <form class="form" id="form" name="form" action="/api/peoples" method="POST">
                     <div>
                       <label for="FirstName">FirstName</label>
                       <input type="text" id="FirstName">
@@ -37,7 +37,7 @@
                     </div>
                     <div>
                       <label for="message">Votre message</label>
-                      <textarea id="message" placeholder="Pourquoi souhaitez vous rejoindre notre entreprise?"></textarea>
+                      <textarea id="message" ></textarea>
                     </div>
                     <button type="submit" id="submit-form" class="center-button">Soumettre ma candidature</button>
                   </form>

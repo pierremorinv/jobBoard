@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const ul = document.createElement("ul");
             const listItems = [
-              "Salaire annuel: 45000k",
-              "Lieu: Mérignac",
+              `${advertisementArray[i].workingTime}h par semaine`,
+              `Type de contrat : ${advertisementArray[i].jobContrat}`,
               `Date de l'offre: ${formatDate(advertisementArray[i].jobDate)}`,
             ];
 
@@ -66,12 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             titleContent.textContent = "Les Missions du poste";
 
             const ul2 = document.createElement("ul");
-            const listMissions = [
-              "Tu seras encadré par un Scrum Master/Tech Lead et intègreras une de nos équipes de développement.",
-              "Tu participeras à la conception et à la réalisation de solutions web cloud.",
-              "Tu feras preuve d'adaptabilité et d'ouverture dans la découverte de nouvelles technologies (React, Angular, MongoDB, Neo4j, Vertx...).",
-              "Un accent fort sera mis sur la qualité, la maintenabilité et l'industrialisation des processus (Gitlab CI, SonarQube, Docker, DEVOPS, Tests automatisés...).",
-            ];
+            const listMissions = [`${advertisementArray[i].jobOffer}`];
 
             listMissions.forEach((liMission) => {
               const li2 = document.createElement("li");

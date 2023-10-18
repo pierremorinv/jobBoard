@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         allowNull: false,
       },
+      jobContrat: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       jobOffer: {
         type: DataTypes.STRING,
         allowNull: false,

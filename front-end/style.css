@@ -75,6 +75,7 @@ h2 {
   padding-right: 5%;
 }
 .advertisements-section .advertisements-article #collapse-content ul {
+  padding-left: 0%;
   padding-bottom: 3%;
   margin-left: 5%;
   margin-right: 5%;
@@ -115,7 +116,7 @@ h2 {
   margin: 0 auto;
 }
 
-#form {
+form {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: fixed;
   top: 50%;
@@ -135,15 +136,22 @@ h2 {
   background-color: white;
   z-index: 999;
 }
-#form .center-button {
+form #submit-form {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  margin: 10px auto; /* Centrer le bouton horizontalement */
+  padding: 3%;
+  border-radius: 10px;
+  margin: 10px auto;
   display: block;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
 }
-#form div {
+form div {
   padding: 5%;
 }
-#form div input {
+form div input {
   border-radius: 5px;
   margin-top: 1%;
   width: 100%;
@@ -153,7 +161,7 @@ h2 {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-#form div textarea {
+form div textarea {
   width: 100%;
 }
 

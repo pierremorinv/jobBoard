@@ -68,6 +68,7 @@ h2 {
 
     #collapse-content {
       ul {
+        padding-left: 0%;
         padding-bottom: 3%;
         margin-left: 5%;
         margin-right: 5%;
@@ -110,7 +111,7 @@ h2 {
     margin: 0 auto;
   }
 }
-#form {
+form {
   @include myBorderShadow;
   position: fixed;
   top: 50%;
@@ -129,11 +130,19 @@ h2 {
   margin: 0 auto;
   background-color: white;
   z-index: 999;
-  .center-button {
+  #submit-form {
     @include myBorderShadow;
-    margin: 10px auto; /* Centrer le bouton horizontalement */
+    padding: 3%;
+    border-radius: 10px;
+    margin: 10px auto;
     display: block;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
   }
+
   div {
     padding: 5%;
     input {

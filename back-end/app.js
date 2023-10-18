@@ -20,7 +20,12 @@ app
 
 sequelize.initDb();
 
-require("./src/routes/findAllAdvertisements")(app);
+require("./src/routes/RouteAdvertisements")(app);
+app.use(({ res }) => {
+  const message =
+    "Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.";
+  res.status(404).json({ message });
+});
 
 app.listen(port, () => {
   console.log(
