@@ -39,6 +39,7 @@ module.exports = (app) => {
     // crée un élément dans la base de données
 
     app.post("/api/peoples", (req, res) => {
+      const { firstName, lastName, tel, email, messageSent } = req.body;
       People.create(req.body)
         .then((people) => {
           const message = `the people have been create`;

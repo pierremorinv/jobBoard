@@ -24,6 +24,7 @@ require("./src/routes/RouteAdvertisements")(app);
 require("./src/routes/RouteCompany")(app);
 require("./src/routes/RoutePeople")(app);
 require("./src/routes/RouteInformation")(app);
+
 // app.use(({ res }) => {
 //   const message =
 //     "Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.";
