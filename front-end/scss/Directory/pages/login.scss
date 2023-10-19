@@ -1,23 +1,23 @@
 .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455') no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    background-color: white;
-    margin: 0;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455")
+    no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  background-color: white;
+  margin: 0;
 
-.login * {
+  .login * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    font-family: "Poppins", sans-serif;
+  }
 
-.login header {
+  .login header {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,22 +27,22 @@
     justify-content: space between;
     align-items: center;
     z-index: 99;
-}
+  }
 
-.login .login-navigation {
+  .login .login-navigation {
     display: flex;
     align-items: center;
-}
+  }
 
-.login .login-navigation a {
+  .login .login-navigation a {
     font-size: 1.1em;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
-}
+  }
 
-.login .login-navigation .btnLogin-popup {
+  .login .login-navigation .btnLogin-popup {
     width: 130px;
     height: 50px;
     background: transparent;
@@ -55,20 +55,20 @@
     font-weight: 500;
     margin-left: 40px;
     transition: 1s;
-}
+  }
 
-.login .login-navigation .btnLogin-popup:hover {
+  .login .login-navigation .btnLogin-popup:hover {
     background: #fff;
     color: #162938;
-}
+  }
 
-.login .logo {
+  .login .logo {
     font-size: 2em;
     color: #fff;
     user-select: none;
-}
+  }
 
-.login .login-container {
+  .login .login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,34 +76,34 @@
     width: 400px;
     height: 440px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-}
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
 
-.login .login-container .login-box {
+  .login .login-container .login-box {
     width: 100%;
     padding: 40px;
-}
+  }
 
-.login .login-box h2 {
+  .login .login-box h2 {
     font-size: 2em;
     color: white;
     text-align: center;
     line-height: 50px;
-}
+  }
 
-.login .login-input-box {
+  .login .login-input-box {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 50px;
     margin: 30px 0;
     border-bottom: 2px solid white;
-}
+  }
 
-.login .login-input-box input {
+  .login .login-input-box input {
     width: 100%;
     height: 50px;
     background: transparent;
@@ -111,9 +111,9 @@
     outline: none;
     font-size: 16px;
     padding: 0 5px;
-}
+  }
 
-.login .login-input-box label {
+  .login .login-input-box label {
     display: flex;
     flex-direction: column;
     top: 50px;
@@ -122,9 +122,9 @@
     color: white;
     font-weight: 500;
     pointer-events: none;
-}
+  }
 
-.login .login-input-box .icon {
+  .login .login-input-box .icon {
     display: flex;
     justify-content: flex-end;
     right: 8px;
@@ -132,32 +132,32 @@
     font-size: 18px;
     color: white;
     line-height: 50px;
-}
+  }
 
-.login .login-box .remember-forget {
-    font-size: .9em;
+  .login .login-box .remember-forget {
+    font-size: 0.9em;
     color: white;
     font-weight: 500;
     margin: 15px 0;
     display: flex;
     justify-content: space-between;
-}
+  }
 
-.login .login-box .remember-forget label input {
+  .login .login-box .remember-forget label input {
     accent-color: white;
     margin-right: 10px;
-}
+  }
 
-.login .login-box .remember-forget a {
+  .login .login-box .remember-forget a {
     color: white;
     text-decoration: none;
-}
+  }
 
-.login .login-box .remember-forget a:hover {
+  .login .login-box .remember-forget a:hover {
     text-decoration: underline;
-}
+  }
 
-.login .login-box button {
+  .login .login-box button {
     width: 100%;
     height: 45px;
     background: white;
@@ -169,26 +169,27 @@
     color: black;
     font-weight: 500;
     margin-top: 30px;
-}
+  }
 
-.login .login-box button:hover {
+  .login .login-box button:hover {
     background: black;
     color: #fff;
-}
+  }
 
-.login .login-box .register-link {
+  .login .login-box .register-link {
     font-size: 15px;
     color: #fff;
     text-align: center;
     margin: 20px 0 10px;
-}
+  }
 
-.login .login-box .register-link a {
+  .login .login-box .register-link a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-}
+  }
 
-.login .login-box .register-link a:hover {
+  .login .login-box .register-link a:hover {
     text-decoration: underline;
+  }
 }
