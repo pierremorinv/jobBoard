@@ -3,7 +3,11 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 3px solid black;
+<<<<<<< Updated upstream
   background-color: $secondary-color;
+=======
+  //background-color: grey;
+>>>>>>> Stashed changes
   margin-bottom: 2%;
 
   @media screen and (max-width: 430px) {
