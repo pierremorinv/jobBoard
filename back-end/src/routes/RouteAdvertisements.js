@@ -7,7 +7,7 @@ module.exports = (app) => {
     Advertisement.findAll()
       .then((advertisements) => {
         const message = "the list of advertisements has been retrieved.";
-        res.json({ message, data: advertisements });
+        res.status(201).json({ message, data: advertisements });
       })
       .catch((error) => {
         const message =
@@ -16,7 +16,7 @@ module.exports = (app) => {
       });
   });
 
-  // Récupère un élément en comparant l'id écrit dans l'
+  // Récupère un élément en comparant l'id écrit dans l'url
 
   app.get("/api/advertisements/:id", (req, res) => {
     Advertisement.findByPk(req.params.id)
@@ -62,7 +62,7 @@ module.exports = (app) => {
               "The requested advertisement does not exist. try again with another id";
             return res.status(404).json({ message });
           }
-          const message = "the advertisement have modified.";
+          const message = "the advertisement have been modified.";
           res.json({ message, data: advertisement });
         });
       });
@@ -71,15 +71,25 @@ module.exports = (app) => {
     // Supprime une élément dans la base de données
 
     app.delete("/api/advertisements/:id", (req, res) => {
-      Advertisement.findByPk(req.params.id).then((advertisement) => {
-        const advertisementDeleted = advertisement;
-        Advertisement.destroy({
-          where: { id: advertisement.id },
-        }).then((_) => {
-          const message = `the advertisement with id n°${advertisementDeleted.id} have been deleted`;
-          res.json({ message, data: advertisementDeleted });
+      Advertisement.findByPk(req.params.id)
+        .then((advertisement) => {
+          if (advertisement === null) {
+            const message =
+              "the advertisement doesnt exist try with an other id";
+            return res.status(404).json({ message });
+          }
+          const advertisementDeleted = advertisement;
+          Advertisement.destroy({
+            where: { id: advertisement.id },
+          }).then((_) => {
+            const message = `the advertisement with id n°${advertisementDeleted.id} have been deleted`;
+            res.json({ message, data: advertisementDeleted });
+          });
+        })
+        .catch((error) => {
+          const message = `the advertisement couldn't be delete try in a few moments`;
+          res.status(500).json({ message, data: error });
         });
-      });
     });
   });
 };

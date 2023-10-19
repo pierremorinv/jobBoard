@@ -23,7 +23,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      message: {
+      messageSent: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      adConcerned: {
         type: DataTypes.STRING,
         allowNull: false,
       },

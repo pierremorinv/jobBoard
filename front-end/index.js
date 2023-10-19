@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let contentVisible = false;
   let contentForm = false;
   let section = document.querySelector(".advertisements-section");
 
@@ -8,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       let advertisementArray = data.data;
       for (let i = 0; i < advertisementArray.length; i++) {
-        console.log(advertisementArray[i]);
-
         let article = document.createElement("article");
         article.className = "advertisements-article";
 
@@ -22,10 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let button = document.createElement("button");
         button.textContent = "Voir l'offre";
         button.id = "buttonLearnMore";
+        button.dataset.clicked = "false";
 
         const ul = document.createElement("ul");
         const lis = [
-          advertisementArray[i].jobLocation,
+          `${advertisementArray[i].jobLocation}`,
           `${advertisementArray[i].salary}$`,
           formatDate(advertisementArray[i].jobDate),
         ];
@@ -45,62 +43,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
         button.addEventListener("click", () => {
           if (button.dataset.clicked !== "true") {
-            let articleDescription = document.createElement("div");
-            articleDescription.id = "collapse-content";
+            fetch("http://localhost:3000/api/companies")
+              .then((response) => response.json())
+              .then((data) => {
+                let companyArray = data.data;
+                const advertisementId = advertisementArray[i].id;
 
-            const ul = document.createElement("ul");
-            const listItems = [
-              `${advertisementArray[i].workingTime}h par semaine`,
-              `Type de contrat : ${advertisementArray[i].jobContrat}`,
-              `Date de l'offre: ${formatDate(advertisementArray[i].jobDate)}`,
-            ];
+                const matchingCompany = companyArray.find(
+                  (company) => company.id === advertisementId
+                );
 
-            listItems.forEach((liText) => {
-              const li = document.createElement("li");
-              li.textContent = liText;
-              li.id = "liInfo";
-              ul.appendChild(li);
-            });
+                if (matchingCompany) {
+                  let articleDescription = document.createElement("div");
+                  articleDescription.id = "collapse-content";
 
-            let titleContent = document.createElement("h2");
-            titleContent.textContent = "Les Missions du poste";
+                  const ul = document.createElement("ul");
+                  const listItems = [
+                    `${advertisementArray[i].workingTime}h par semaine`,
+                    `Type de contrat : ${advertisementArray[i].jobContrat}`,
+                    `Date de l'offre: ${formatDate(
+                      advertisementArray[i].jobDate
+                    )}`,
+                  ];
 
-            const ul2 = document.createElement("ul");
-            const listMissions = [`${advertisementArray[i].jobOffer}`];
+                  listItems.forEach((liText) => {
+                    const li = document.createElement("li");
+                    li.textContent = liText;
+                    li.id = "liInfo";
+                    ul.appendChild(li);
+                  });
 
-            listMissions.forEach((liMission) => {
-              const li2 = document.createElement("li");
-              li2.textContent = liMission;
-              li2.id = "liMission";
-              ul2.appendChild(li2);
-            });
+                  let titleContent = document.createElement("h2");
+                  titleContent.textContent = `Entreprise ${matchingCompany.nameOfTheCompany}`;
 
-            articleDescription.appendChild(ul);
-            articleDescription.appendChild(titleContent);
-            articleDescription.appendChild(ul2);
-            article.appendChild(articleDescription);
-            button.dataset.clicked = "true";
+                  const ul2 = document.createElement("ul");
+                  const listMissions = [`${advertisementArray[i].jobOffer}`];
 
-            const buttonSubmit = document.createElement("button");
-            buttonSubmit.id = "button-submit";
-            buttonSubmit.innerText = "Postuler";
-            buttonSubmit.style.marginBottom = "2%";
+                  listMissions.forEach((liMission) => {
+                    const li2 = document.createElement("li");
+                    li2.textContent = liMission;
+                    li2.id = "liMission";
+                    ul2.appendChild(li2);
+                  });
 
-            articleDescription.appendChild(buttonSubmit);
+                  articleDescription.appendChild(ul);
+                  articleDescription.appendChild(titleContent);
+                  articleDescription.appendChild(ul2);
+                  article.appendChild(articleDescription);
+                  button.dataset.clicked = "true";
 
-            buttonSubmit.addEventListener("click", () => {
-              let form = document.querySelector("form");
-              if (contentForm === false) {
-                button.dataset.clicked = "true";
-                form.style.display = "block";
-                console.log("you clicked");
-                contentForm = true;
-              } else {
-                button.dataset.clicked = "false";
-                console.log("you unclicked");
-                contentForm = false;
-              }
-            });
+                  const buttonSubmit = document.createElement("button");
+                  buttonSubmit.id = "button-submit";
+                  buttonSubmit.innerText = "Postuler";
+                  buttonSubmit.style.marginBottom = "2%";
+
+                  articleDescription.appendChild(buttonSubmit);
+
+                  buttonSubmit.addEventListener("click", () => {
+                    let form = document.querySelector("form");
+                    if (contentForm === false) {
+                      button.dataset.clicked = "true";
+                      form.style.display = "block";
+                      console.log("you clicked");
+                      contentForm = true;
+                    } else {
+                      button.dataset.clicked = "false";
+                      console.log("you unclicked");
+                      contentForm = false;
+                    }
+                  });
+                }
+              });
           } else {
             let collapseContent = document.getElementById("collapse-content");
             if (collapseContent) {

@@ -21,11 +21,14 @@ app
 sequelize.initDb();
 
 require("./src/routes/RouteAdvertisements")(app);
-app.use(({ res }) => {
-  const message =
-    "Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.";
-  res.status(404).json({ message });
-});
+require("./src/routes/RouteCompany")(app);
+require("./src/routes/RoutePeople")(app);
+require("./src/routes/RouteInformation")(app);
+// app.use(({ res }) => {
+//   const message =
+//     "Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.";
+//   res.status(404).json({ message });
+// });
 
 app.listen(port, () => {
   console.log(
