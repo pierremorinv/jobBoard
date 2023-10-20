@@ -4,4 +4,21 @@ header {
   align-items: center;
   padding-right: 1%;
   padding-left: 1%;
+
+  ul {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 3%;
+    width: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    li {
+      font-size: x-large;
+      a {
+        color: white;
+      }
+    }
+  }
 }

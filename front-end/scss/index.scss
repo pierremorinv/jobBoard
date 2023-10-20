@@ -1,4 +1,3 @@
-@import "./Directory/utils/variables.scss";
 @import "./Directory/utils/mixin.scss";
 @import "./Directory/pages/home.scss";
 @import "./Directory/layout/header.scss";
@@ -14,18 +13,16 @@ html {
   width: 100%;
 }
 body {
+  color: white;
   font-family: Roboto;
-  margin-bottom: 3%;
-  background-color: $primary-color;
-  input {
-    color: white;
-  }
+  background-image: url("https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455");
+
   li {
     list-style-type: none;
   }
   a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
   h1,
   h2,

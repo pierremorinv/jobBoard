@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.index-body {
+  color: black;
+}
 .index-body h2 {
   text-align: center;
 }
@@ -47,7 +50,7 @@
 .index-body .advertisements-section .advertisements-article button:hover {
   cursor: pointer;
   background-color: black;
-  color: rgb(246, 246, 246);
+  color: white;
 }
 @media screen and (max-width: 1024px) {
   .index-body .advertisements-section .advertisements-article {
@@ -97,7 +100,7 @@
 }
 .index-body .advertisements-section .advertisements-article #collapse-content ul #liInfo:hover {
   background-color: black;
-  color: rgb(246, 246, 246);
+  color: white;
 }
 .index-body .advertisements-section .advertisements-article #collapse-content ul li {
   padding-right: 5%;
@@ -108,7 +111,7 @@
   text-align: center;
 }
 .index-body .advertisements-section :hover {
-  background-color: rgb(246, 246, 246);
+  background-color: white;
 }
 .index-body .advertisements-section #button-submit {
   display: block;
@@ -169,6 +172,22 @@ header {
   align-items: center;
   padding-right: 1%;
   padding-left: 1%;
+}
+header ul {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 3%;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+header ul li {
+  font-size: x-large;
+}
+header ul li a {
+  color: white;
 }
 
 footer ul {
@@ -422,53 +441,46 @@ footer ul {
 .edit {
   font-family: Arial, sans-serif;
   background-image: url("https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455");
-  display: flex;
-  background-size: 100% 100%;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
 }
 .edit .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 25%;
-  height: 70%;
+  height: auto;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.edit h1 {
+.edit .container h1 {
   font-size: 2em;
-  margin: 0;
+  margin: 10%;
   color: white;
   margin-bottom: 40px;
 }
-.edit form {
+.edit .container form {
   text-align: center;
 }
-.edit label {
+.edit .container label {
   display: block;
   margin-top: 10px;
   font-weight: bold;
   text-align: center;
   color: white;
 }
-.edit input,
-.edit button {
-  width: 100%;
+.edit .container input {
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
   font-size: 1em;
   text-align: center;
+  color: white;
 }
-.edit button {
-  width: 100%;
+.edit .container button {
+  width: 75%;
   height: 45px;
   background: white;
   border: none;
@@ -478,63 +490,13 @@ footer ul {
   font-size: 1em;
   color: black;
   font-weight: 500;
-  margin-top: 0px;
-  margin-right: 50px;
-  margin-top: 20px;
+  margin: 10%;
 }
-.edit button:hover {
-  background-color: black;
+.edit .container button:hover {
+  background-color: rgb(216, 31, 31);
   color: white;
 }
-.edit header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 99;
-}
-.edit .navigation {
-  display: flex;
-  align-items: center;
-}
-.edit .navigation a {
-  font-size: 1.1em;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 30px;
-}
-.edit .navigation .btnLogin-popup {
-  width: 130px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid #fff;
-  outline: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1em;
-  color: #fff;
-  font-weight: 500;
-  margin-left: 40px;
-  transition: 1s;
-  margin-bottom: 25px;
-}
-.edit .navigation .btnLogin-popup:hover {
-  background: #fff;
-  color: #162938;
-}
-.edit .logo {
-  font-size: 2em;
-  color: #fff;
-  user-select: none;
-  margin-left: 80px;
-}
-.edit .input-box input {
-  width: 100%;
+.edit .container .input-box input {
   height: 50px;
   background: transparent;
   border: 1px solid white;
@@ -543,8 +505,14 @@ footer ul {
   padding: 0 5px;
   border-radius: 20px;
 }
-.edit a {
+.edit .container a {
   color: white;
+}
+.edit .div-a {
+  margin: 5%;
+}
+.edit .div-a a:hover {
+  text-decoration: underline;
 }
 
 body,
@@ -554,19 +522,16 @@ html {
 }
 
 body {
-  font-family: Roboto;
-  margin-bottom: 3%;
-  background-color: rgb(246, 246, 246);
-}
-body input {
   color: white;
+  font-family: Roboto;
+  background-image: url("https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455");
 }
 body li {
   list-style-type: none;
 }
 body a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 body h1,
 body h2,

@@ -4,27 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
-    <title>Profil Page</title>
+    <title>Edit Page</title>
   </head>
   <body class="edit">
     <header>
-      <img src="" alt="Logo de votre site" class="logo" />
+      <p>logo</p>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Page d'acceuil</a></li>
+        </ul>
+      </nav>
     </header>
     <div class="container">
-      <h1>edit your Profil</h1>
-      <form action="#">
+      <form>
+        <h1>edit your Profil</h1>
         <div class="form-group input-box">
           <label for="username">Mail :</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" />
         </div>
-
         <div class="form-group input-box">
-          <!-- Utilisez la classe input-box ici -->
           <label for="password">Password :</label>
-          <input type="password" id="password" name="password" required />
+          <input type="password" id="password" name="password" />
         </div>
-        <button type="submit">Save changes</button>
+        <button id="button-form-edit" type="submit">Save changes</button>
       </form>
     </div>
+    <script src="../javascript/edit.js"></script>
   </body>
 </html>

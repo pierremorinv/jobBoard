@@ -106,10 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
                       button.dataset.clicked = "true";
                       form.style.display = "block";
                       console.log("you clicked");
-                      contentForm = true;
+
                       let submitForm = document.querySelector("#submit-form");
-                      submitForm.addEventListener("click", (e) => {
-                        e.preventDefault();
+                      submitForm.addEventListener("click", () => {
                         let inputFirstName =
                           document.getElementById("firstName").value;
                         let inputLastName =
@@ -126,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                           messageSent: inputMessage,
                           adConcerned: advertisementId,
                         };
+                        console.log(contact);
                         fetch("http://localhost:3000/api/informations", {
                           method: "POST",
                           headers: {
@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             );
                           });
                       });
+                      contentForm = true;
                     } else {
                       button.dataset.clicked = "false";
                       console.log("you unclicked");
