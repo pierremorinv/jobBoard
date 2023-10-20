@@ -167,6 +167,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+footer ul {
+  padding-left: 1%;
+  padding-right: 1%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .login {
@@ -702,6 +711,7 @@ body li {
 }
 body a {
   text-decoration: none;
+  color: black;
 }
 body h1,
 body h2,
