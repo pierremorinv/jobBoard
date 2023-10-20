@@ -2,43 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login & Registration</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
     <link rel="stylesheet" href="../style.css" />
+    <title>Login</title>
   </head>
-  <body class="login">
-    <div class="login-container">
-      <div class="login-box">
-        <form action="">
-          <h2>Login</h2>
-          <div class="login-input-box">
-            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-            <input
-              type="email"
-              required
-              placeholder="Email"
-              id="email"
-              name="email"
-            />
-          </div>
-          <div class="login-input-box">
-            <span class="icon"><i class="fa-solid fa-lock"></i></span>
-            <input type="password" placeholder="Password" required />
-          </div>
+  <body class="edit">
+    <header>
+      <img src="" alt="Logo de votre site" class="logo" />
+    </header>
+    <div class="container">
+      <h1>Login</h1>
+      <form action="#">
+        <div class="form-group input-box">
+          <label for="username">Mail :</label>
+          <input type="email" id="email" name="email" required />
+        </div>
 
-          <button type="submit">Login</button>
-          <div class="register-link">
-            <a href="edit.html">Don't have an account? Create Now!</a>
-          </div>
-        </form>
-      </div>
+        <div class="form-group input-box">
+          <!-- Utilisez la classe input-box ici -->
+          <label for="password">Password :</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Save changes</button>
+        <a href="create.html">Don't have an account? Create Now!</a>
+      </form>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
