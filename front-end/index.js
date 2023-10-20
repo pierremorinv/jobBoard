@@ -101,11 +101,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
                   buttonSubmit.addEventListener("click", () => {
                     let form = document.querySelector("form");
+
                     if (contentForm === false) {
                       button.dataset.clicked = "true";
                       form.style.display = "block";
                       console.log("you clicked");
                       contentForm = true;
+                      let submitForm = document.querySelector("#submit-form");
+                      submitForm.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let inputFirstName =
+                          document.getElementById("firstName").value;
+                        let inputLastName =
+                          document.getElementById("lastName").value;
+                        let inputTel = document.getElementById("tel").value;
+                        let inputEmail = document.getElementById("email").value;
+                        let inputMessage =
+                          document.getElementById("message").value;
+                        let contact = {
+                          firstName: inputFirstName,
+                          lastName: inputLastName,
+                          tel: inputTel,
+                          emailSent: inputEmail,
+                          messageSent: inputMessage,
+                          adConcerned: advertisementId,
+                        };
+                        fetch("http://localhost:3000/api/informations", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(contact), //
+                        })
+                          .then((response) => {
+                            return response.text(); // Utilisez response.text() pour afficher la réponse complète
+                          })
+                          .then((data) => {
+                            console.log(data); // Affichez la réponse du serveur
+                          })
+                          .catch((error) => {
+                            console.error(
+                              "Erreur lors de la requête fetch:",
+                              error
+                            );
+                          });
+                      });
                     } else {
                       button.dataset.clicked = "false";
                       console.log("you unclicked");

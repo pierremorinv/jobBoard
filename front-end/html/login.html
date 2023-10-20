@@ -12,35 +12,28 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="login">
-    <header>
-      <img src="" alt="Logo de votre site" class="logo" />
-      <nav class="login-navigation">
-        <a href="#">Home</a>
-        <a href="#">Contact</a>
-        <a href="#">About</a>
-        <button class="btnLogin-popup">Login</button>
-      </nav>
-    </header>
-
     <div class="login-container">
       <div class="login-box">
         <form action="">
           <h2>Login</h2>
           <div class="login-input-box">
             <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-            <input type="email" required placeholder="Email" />
+            <input
+              type="email"
+              required
+              placeholder="Email"
+              id="email"
+              name="email"
+            />
           </div>
           <div class="login-input-box">
             <span class="icon"><i class="fa-solid fa-lock"></i></span>
             <input type="password" placeholder="Password" required />
           </div>
-          <div class="remember-forget">
-            <label><input type="checkbox" />Remember Me</label>
-            <a href="">Forgot Password?</a>
-          </div>
+
           <button type="submit">Login</button>
           <div class="register-link">
-            <a href="#">Don't have an account? Create Now!</a>
+            <a href="edit.html">Don't have an account? Create Now!</a>
           </div>
         </form>
       </div>
