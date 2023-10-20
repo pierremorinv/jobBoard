@@ -6,8 +6,33 @@ fetch("http://localhost:3000/api/peoples")
     console.log(users);
 
     buttonFormLogin.addEventListener("click", (e) => {
-      e.preventDefault();
+      const inputEmail = document.getElementById("email");
+      const inputPassword = document.getElementById("password");
+      let inputEmailValue = inputEmail.value;
+      let inputPasswordValue = inputPassword.value;
+      let user = {
+        email: inputEmailValue,
+        password: inputPasswordValue,
+      };
+      console.log(user);
 
-      // window.open("http://127.0.0.1:5500/front-end/index.html");
+      const matchUser = users.find(
+        (usercreate) =>
+          usercreate.email === user.email &&
+          usercreate.password === user.password
+      );
+
+      if (matchUser) {
+        window.open("http://127.0.0.1:5500/front-end/index.html");
+      } else {
+        const matchEmail = users.find(
+          (usercreate) => usercreate.email === user.email
+        );
+        if (matchEmail) {
+          alert("Mot de passe incorrect");
+        } else {
+          alert("Utilisateur introuvable");
+        }
+      }
     });
   });
