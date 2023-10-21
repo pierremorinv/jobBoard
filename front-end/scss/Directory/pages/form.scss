@@ -15,10 +15,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     h1 {
+      text-wrap: wrap;
       font-size: 2em;
-      margin: 10%;
-      color: white;
-      margin-bottom: 40px;
+      margin: 5%;
     }
 
     form {
@@ -34,12 +33,12 @@
     }
 
     input {
-      padding: 10px;
-      margin-top: 10px;
+      padding: 1%;
+      margin-top: 1%;
       border-radius: 5px;
       font-size: 1em;
       text-align: center;
-
+      width: 90%;
       color: white;
     }
 
@@ -54,7 +53,7 @@
       font-size: 1em;
       color: black;
       font-weight: 500;
-      margin: 10%;
+      margin: 3%;
     }
 
     button:hover {
