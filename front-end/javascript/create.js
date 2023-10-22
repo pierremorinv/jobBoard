@@ -36,13 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const matchEmail = userAlreadyCreate.find(
           (usercreate) => usercreate.email === user.email
         );
+        const matchUserForEverything = userAlreadyCreate.find(
+          (usercreate) =>
+            usercreate.email === user.email &&
+            usercreate.password === user.password &&
+            usercreate.firstName === user.firstName &&
+            usercreate.lastName === user.lastName &&
+            usercreate.tel === user.tel
+        );
 
-        if (matchUser) {
+        if (matchUserForEverything || matchUser || matchEmail) {
           alert("vous etes déja inscrit");
-        }
-
-        if (matchEmail) {
-          alert("cette email est déja utilisé");
         } else {
           fetch("http://localhost:3000/api/peoples", {
             method: "POST",
@@ -60,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch((error) => {
               console.error("Erreur lors de la requête fetch:", error);
             });
+          localStorage.setItem("user", JSON.stringify(user));
           window.open("http://127.0.0.1:5500/front-end/index.html");
         }
       });
