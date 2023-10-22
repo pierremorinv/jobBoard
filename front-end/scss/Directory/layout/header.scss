@@ -9,30 +9,11 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
-}
-
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -60%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: 0.5s;
-}
-
-.header:hover::before {
-  left: 40%;
-  
+  align-items: center;
 }
 
 .logo {
-  color: #fff;
-  font-size: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: default;
+  width: 5%;
 }
 
 .navbar a {
@@ -45,4 +26,17 @@ nav {
 
 .navbar a:hover {
   color: grey;
+}
+
+
+@media screen and (max-width: 480px) {
+  .logo {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 481px)  and (max-width: 980px) {
+  .logo {
+    width: 15%;
+  }
 }
