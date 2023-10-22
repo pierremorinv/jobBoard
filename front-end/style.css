@@ -250,10 +250,16 @@ svg {
   }
 }
 .admin {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.admin .nav-admin {
-  width: 25%;
+.admin .nav-admin ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.admin .nav-admin ul li {
+  margin: 5px 10px;
 }
 .admin .button {
   align-items: center;

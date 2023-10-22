@@ -1,7 +1,15 @@
 .admin {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   .nav-admin {
-    width: 25%;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      li {
+        margin: 5px 10px;
+      }
+    }
   }
 
   .button {

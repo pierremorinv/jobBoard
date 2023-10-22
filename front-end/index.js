@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.textContent = "Voir l'offre";
             button.id = "buttonLearnMore";
             button.dataset.clicked = "false";
+            console.log(button.dataset.clicked)
 
             const ul = document.createElement("ul");
             const lis = [
