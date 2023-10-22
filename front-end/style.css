@@ -272,12 +272,18 @@ svg {
 }
 .admin .button.blue {
   background-color: black;
+  padding: 5px 10px;
+  border-radius: 25px 25px;
 }
 .admin button.green {
   background-color: #13ce66;
+  padding: 5px 10px;
+  border-radius: 25px 25px;
 }
 .admin button.red {
   background-color: #ff4949;
+  padding: 5px 10px;
+  border-radius: 25px 25px;
 }
 .admin .button:hover {
   box-shadow: inset 200px 0 0 rgba(0, 0, 0, 0.3333333333);
