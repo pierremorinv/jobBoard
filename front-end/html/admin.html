@@ -14,16 +14,19 @@
     <title>CRUD</title>
   </head>
   <body class="admin">
-    <header class="header">
-      <nav>
-        <img src="../../assets/logo.png" alt="logo job finder pro" class="logo">
+    <header>
+      <img src="../../assets/logo.png" alt="logo job finder pro" class="logo" />
+      <nav class="nav-admin">
+        <ul>
+          <li><a href="../index.html">Acceuil</a></li>
+          <li><a href="./create.html">Inscription</a></li>
+          <li><a href="./login.html">Connexion</a></li>
+        </ul>
       </nav>
     </header>
     <main>
-      <h1 class="header-title">Enregistrement des annonces</h1>
-      <button type="button" class="button blue mobile" id="cadastrarCliente">
-        Ajouter une annonce
-      </button>
+      <h1 class="header-title">Offres d'emploies disponibles</h1>
+
       <table class="records">
         <thead>
           <tr>
@@ -67,6 +70,12 @@
           </tr>
         </tbody>
       </table>
+      <div class="div-button">
+        <button type="button" class="button blue mobile" id="cadastrarCliente">
+          Ajouter une annonce
+        </button>
+      </div>
+
       <div class="modal" id="modal">
         <div class="modal-content">
           <header class="modal-header">
@@ -151,12 +160,13 @@
           ></path>
         </svg>
       </div>
-      <ul class="footer">
+      <ul>
         <li><a href="#">Informations légales</a></li>
         <li><a href="#">CGU</a></li>
         <li><a href="#">Politique de confidentialité</a></li>
         <li><a href="#">Aide et contact</a></li>
       </ul>
     </footer>
+    <script src="../javascript/admin.js"></script>
   </body>
 </html>

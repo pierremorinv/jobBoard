@@ -1,11 +1,11 @@
 .admin {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: "karla", sans-serif;
-  position: relative;
+  .nav-admin {
+    width: 25%;
+  }
 
   .button {
+    align-items: center;
     border-style: none;
     height: 40px;
     padding: 6px 12px;
@@ -58,12 +58,6 @@
     }
   }
 
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
   :root {
     --primary-color: black;
     --secundary-color: rgb(245, 237, 237);
@@ -71,39 +65,25 @@
     --text-color: #fff;
   }
 
-  header {
-    background-color: var(--primary-color);
-    height: 70px;
-    text-align: center;
-    line-height: 70px;
-    box-shadow: 0 1px 2px var(--shadow-color);
-  }
-
   .header-title {
     color: white;
     font-size: 2rem;
+    text-align: center;
+    text-decoration: underline;
   }
 
   main {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 90%;
-    margin: 5vh auto;
-    padding: 50px;
+    padding: 2%;
     box-shadow: 2px 2px 10px var(--shadow-color);
     gap: 20px;
+    .div-button {
+      padding: 0%;
+      margin-top: 3%;
+      text-align: center;
+    }
   }
-
-  footer {
-    width: 100;
-    text-align: center;
-    font-weight: 200;
-    font-style: italic;
-    padding: 20px;
-  }
-
+  // responsive part
   @media (max-width: 480px) {
     header {
       position: fixed;
@@ -118,6 +98,12 @@
       margin: 20px 0 0 0;
       width: 100%;
       box-shadow: none;
+      .div-button {
+        width: 100%;
+        button {
+          align-items: center;
+        }
+      }
     }
   }
 
@@ -222,6 +208,7 @@
   }
 
   .records {
+    border: 1px solid white;
     width: 100%;
     user-select: none;
     text-align: left;
@@ -229,6 +216,7 @@
   }
 
   .records th {
+    border: 1px solid white;
     height: 50px;
     background-color: var(--primary-color);
     padding-left: 20px;
@@ -236,15 +224,16 @@
   }
 
   .records td {
+    border: 1px solid white;
     height: 50px;
     padding-left: 20px;
-    color: black;
+    color: white;
   }
 
   .records th:last-child,
   .records td:last-child {
     padding: 0;
-    min-width: 140px;
+
     text-align: center;
   }
 
