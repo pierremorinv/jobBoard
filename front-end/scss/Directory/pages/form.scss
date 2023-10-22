@@ -1,23 +1,24 @@
 .edit {
   font-family: Arial, sans-serif;
-  background-image: url("https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 
   .container {
-    height: auto;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    width: 25%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 30px;
+
     h1 {
-      text-wrap: wrap;
-      font-size: 2em;
-      margin: 5%;
+      margin: 10px 5px;
     }
 
     form {
@@ -57,7 +58,7 @@
     }
 
     button:hover {
-      background-color: rgb(216, 31, 31);
+      background-color: grey;
       color: white;
     }
 
@@ -73,6 +74,13 @@
     a {
       color: white;
     }
+
+
+    footer {
+      margin-top: auto;
+    }
+
+
   }
   .div-a {
     margin: 5%;

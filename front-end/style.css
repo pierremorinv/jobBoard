@@ -169,37 +169,98 @@
   width: 100%;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 1%;
-  padding-left: 1%;
-}
-header ul {
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 3%;
+.header {
   width: 100%;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-header ul li {
-  font-size: x-large;
-}
-header ul li a {
-  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-footer ul {
-  padding-left: 1%;
-  padding-right: 1%;
+nav {
   display: flex;
   justify-content: space-between;
+  padding: 15px 20px;
 }
 
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.header:hover::before {
+  left: 40%;
+}
+
+.logo {
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+}
+
+.navbar a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: grey;
+}
+
+.wave-header {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  text-decoration-color: white;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1000;
+}
+
+@media screen and (max-width: 480px) {
+  footer {
+    font-size: 10px;
+  }
+  footer .footer {
+    padding-bottom: 10px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 980px) {
+  footer {
+    font-size: 15px;
+  }
+  footer .footer {
+    padding-bottom: 15px;
+  }
+}
 .admin {
   min-height: 100vh;
   display: flex;
@@ -443,25 +504,25 @@ footer ul {
 
 .edit {
   font-family: Arial, sans-serif;
-  background-image: url("https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 .edit .container {
-  height: auto;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  width: 25%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 30px;
 }
 .edit .container h1 {
-  text-wrap: wrap;
-  font-size: 2em;
-  margin: 5%;
+  margin: 10px 5px;
 }
 .edit .container form {
   text-align: center;
@@ -496,7 +557,7 @@ footer ul {
   margin: 3%;
 }
 .edit .container button:hover {
-  background-color: rgb(216, 31, 31);
+  background-color: grey;
   color: white;
 }
 .edit .container .input-box input {
@@ -510,6 +571,9 @@ footer ul {
 }
 .edit .container a {
   color: white;
+}
+.edit .container footer {
+  margin-top: auto;
 }
 .edit .div-a {
   margin: 5%;
@@ -527,7 +591,7 @@ html {
 body {
   color: white;
   font-family: Roboto;
-  background-image: url("https://img.freepik.com/free-vector/3d-abstract-wave-pattern-background_53876-120206.jpg?w=1060&t=st=1697554782~exp=1697555382~hmac=637354740e732cb716908eb9260c5cc0599b487c0d030db81747a2bd928b9455");
+  background-image: url("https://i.pinimg.com/originals/9a/5c/13/9a5c13a408179dbf4e6ccd8ae55d6248.jpg");
 }
 body li {
   list-style-type: none;
