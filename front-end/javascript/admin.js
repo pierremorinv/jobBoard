@@ -103,3 +103,49 @@ function supprimerAnnonce(annonceId) {
     // Pour l'instant on refresh la page mais nous implémenterons une logique de supression de l'élément dans le dom ensuite
     location.reload()
 }
+
+// Sélectionnez le bouton "Enregistrer"
+const saveButton = document.querySelector('.button.green');
+
+// Ajoutez un gestionnaire d'événements pour le clic sur le bouton "Enregistrer"
+saveButton.addEventListener('click', () => {
+  // Récupérez les valeurs des champs de formulaire
+  const intitule = document.getElementById('intitule').value;
+  const localisation = document.getElementById('localisation').value;
+  const salaire = document.getElementById('salaire').value;
+  const date = document.getElementById('date').value;
+  const horaire = document.getElementById('horaire').value;
+  const jobOffer = document.getElementById('jobOffer').value;
+  const jobContrat = document.getElementById('jobContrat').value;
+
+  // Créez un objet avec les données du formulaire
+  const formData = {
+    job: intitule,
+    jobLocation: localisation,
+    salary: salaire,
+    jobDate: date,
+    workingTime: horaire,
+    jobOffer: jobOffer,
+    jobContrat: jobContrat
+  };
+
+  // Effectuez une requête POST vers votre backend
+  fetch('http://localhost:3000/api/advertisements', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
+      // La création de l'annonce a réussi, vous pouvez réagir en conséquence (par exemple, fermer la modal)
+      fermerModal(); // Définissez votre fonction pour fermer la modal
+    } else {
+      console.error('Échec de la création de l\'annonce.');
+    }
+  })
+  .catch(error => {
+    console.error('Une erreur s\'est produite : ' + error);
+  });
+});
