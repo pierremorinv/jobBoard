@@ -3,6 +3,9 @@
 .index-body {
   color: black;
 }
+.index-body h1 h2 h3 {
+  color: black;
+}
 .index-body h2 {
   text-align: center;
 }
@@ -537,7 +540,6 @@ body h1,
 body h2,
 body h3 {
   font-family: raleway;
-  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

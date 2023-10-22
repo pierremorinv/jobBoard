@@ -8,11 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
       let buttonFormCreate = document.getElementById("button-form-create");
       buttonFormCreate.addEventListener("click", (e) => {
         e.preventDefault(); // Empêche la soumission du formulaire
+        const inputFirstName = document.getElementById("firstname");
+        const inputLastName = document.getElementById("lastname");
+        const inputTel = document.getElementById("tel");
         const inputEmail = document.getElementById("email");
         const inputPassword = document.getElementById("password");
+
+        let inputFirstNameValue = inputFirstName.value;
+        let inputLastNameValue = inputLastName.value;
+        let inputTelValue = inputTel.value;
         let inputEmailValue = inputEmail.value;
         let inputPasswordValue = inputPassword.value;
+
         let user = {
+          firstName: inputFirstNameValue,
+          lastName: inputLastNameValue,
+          tel: inputTelValue,
           email: inputEmailValue,
           password: inputPasswordValue,
         };
