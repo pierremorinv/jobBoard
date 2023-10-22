@@ -51,7 +51,11 @@ fetch("http://localhost:3000/api/advertisements")
       deleteButton.textContent = "Supprimer";
       deleteButton.setAttribute("type", "button");
       deleteButton.classList.add("button", "red");
-      // Ajoutez ici la logique pour gérer la suppression de l'annonce
+      // Appel à la méthode pour gérer la suppression de l'annonce
+      deleteButton.addEventListener("click", () => {
+        const annonceId = annonce.id; // Assurez-vous d'avoir un moyen d'obtenir l'ID de l'annonce
+        supprimerAnnonce(annonceId);
+      });
 
       // Ajoutez les boutons à la cellule d'action
       actionCell.appendChild(editButton);
@@ -78,4 +82,24 @@ function formatDate(dateStr) {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   return `${year}/${month}/${day}`;
+}
+
+function supprimerAnnonce(annonceId) {
+  fetch(`http://localhost:3000/api/advertisements/${annonceId}`, {
+    method: "DELETE"
+  })
+    .then(response => {
+      if (response.ok) {
+        // Suppression réussie, vous pouvez mettre à jour l'interface utilisateur ou recharger la page si nécessaire
+        // Par exemple, vous pouvez supprimer la ligne de la table qui correspond à l'annonce supprimée
+      } else {
+        console.error("Échec de la suppression de l'annonce.");
+      }
+    })
+    .catch(error => {
+      console.error("Une erreur s'est produite : " + error);
+    });
+
+    // Pour l'instant on refresh la page mais nous implémenterons une logique de supression de l'élément dans le dom ensuite
+    location.reload()
 }
