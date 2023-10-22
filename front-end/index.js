@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Convertissez les données en objet JavaScript
     const user = JSON.parse(userData);
     console.log(user);
+    const editProfile = document.getElementById("editProfil");
+    editProfile.addEventListener("click", () => {
+      localStorage.setItem("user", JSON.stringify(user));
+    });
   }
 
   fetch("http://localhost:3000/api/advertisements")
