@@ -8,6 +8,9 @@
 .index-body h2 {
   text-align: center;
 }
+.index-body ul {
+  display: flex;
+}
 .index-body .advertisements-section {
   color: black;
   display: flex;
@@ -259,6 +262,7 @@ svg {
   flex-direction: column;
 }
 .admin .nav-admin ul {
+  width: 25%;
   display: flex;
   justify-content: space-around;
   padding: 10px;

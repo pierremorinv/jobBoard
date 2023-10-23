@@ -34,7 +34,7 @@ fetch("http://localhost:3000/api/peoples")
           usercreate.password === user.password
       );
       if (!matchEmailUser) {
-        console.log("Identifiants incorrects");
+        alert("Identifiants incorrects");
       }
       if (matchAdminUser) {
         window.open("http://127.0.0.1:5500/front-end/html/admin.html");

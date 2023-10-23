@@ -2,12 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("http://localhost:3000/api/peoples")
     .then((response) => response.json())
     .then((data) => {
-      const userAlreadyCreate = data.data;
-      console.log(userAlreadyCreate);
+      const peopleArray = data.data;
+      console.log(peopleArray);
 
       let buttonFormCreate = document.getElementById("button-form-create");
-      buttonFormCreate.addEventListener("click", (e) => {
-        e.preventDefault(); // Empêche la soumission du formulaire
+      buttonFormCreate.addEventListener("click", () => {
         const inputFirstName = document.getElementById("firstname");
         const inputLastName = document.getElementById("lastname");
         const inputTel = document.getElementById("tel");
@@ -28,15 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
           password: inputPasswordValue,
         };
 
-        const matchUser = userAlreadyCreate.find(
+        const matchUser = peopleArray.find(
           (usercreate) =>
             usercreate.email === user.email &&
             usercreate.password === user.password
         );
-        const matchEmail = userAlreadyCreate.find(
+        const matchEmail = peopleArray.find(
           (usercreate) => usercreate.email === user.email
         );
-        const matchUserForEverything = userAlreadyCreate.find(
+        const matchUserForEverything = peopleArray.find(
           (usercreate) =>
             usercreate.email === user.email &&
             usercreate.password === user.password &&
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(user), //
+            body: JSON.stringify(user),
           })
             .then((response) => {
               return response.text();

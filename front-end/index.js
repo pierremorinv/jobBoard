@@ -2,17 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let contentForm = false;
   let section = document.querySelector(".advertisements-section");
   const userData = localStorage.getItem("user");
-
-  // Vérifiez si des données utilisateur sont disponibles
-  if (userData) {
-    // Convertissez les données en objet JavaScript
-    const user = JSON.parse(userData);
-    console.log(user);
-    const editProfile = document.getElementById("editProfil");
-    editProfile.addEventListener("click", () => {
-      localStorage.setItem("user", JSON.stringify(user));
-    });
-  }
+  const user = JSON.parse(userData);
+  const editProfile = document.getElementById("editProfil");
+  editProfile.addEventListener("click", () => {
+    localStorage.setItem("user", JSON.stringify(user));
+  });
 
   fetch("http://localhost:3000/api/advertisements")
     .then((response) => response.json())
@@ -38,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             button.textContent = "Voir l'offre";
             button.id = "buttonLearnMore";
             button.dataset.clicked = "false";
-            console.log(button.dataset.clicked)
 
             const ul = document.createElement("ul");
             const lis = [
@@ -120,13 +113,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
                       articleDescription.appendChild(buttonSubmit);
 
-                      buttonSubmit.addEventListener("click", () => {
+                      buttonSubmit.addEventListener("click", (e) => {
+                        e.preventDefault();
                         let form = document.querySelector("form");
 
                         if (contentForm === false) {
                           button.dataset.clicked = "true";
                           form.style.display = "block";
                           console.log("you clicked");
+                          if (userData) {
+                            let userLogged = peopleArray.find(
+                              (people) =>
+                                people.email === user.email &&
+                                people.password === user.password
+                            );
+                            console.log(userLogged);
+                            document.getElementById("firstName").value =
+                              userLogged.firstName;
+                            document.getElementById("lastName").value =
+                              userLogged.lastName;
+                            document.getElementById("email").value =
+                              userLogged.email;
+                          } else {
+                            console.log("aucun utilisateur est connecté");
+                          }
 
                           let submitForm =
                             document.querySelector("#submit-form");
@@ -135,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               document.getElementById("firstName").value;
                             let inputLastName =
                               document.getElementById("lastName").value;
-                            let inputTel = document.getElementById("tel").value;
+
                             let inputEmail =
                               document.getElementById("email").value;
                             let inputMessage =
@@ -143,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             let contact = {
                               firstName: inputFirstName,
                               lastName: inputLastName,
-                              tel: inputTel,
                               emailSent: inputEmail,
                               messageSent: inputMessage,
                               adConcerned: advertisementId,
@@ -154,13 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
                               headers: {
                                 "Content-Type": "application/json",
                               },
-                              body: JSON.stringify(contact), //
+                              body: JSON.stringify(contact),
                             })
                               .then((response) => {
-                                return response.text(); // Utilisez response.text() pour afficher la réponse complète
+                                return response.text();
                               })
                               .then((data) => {
-                                console.log(data); // Affichez la réponse du serveur
+                                console.log(data);
                               })
                               .catch((error) => {
                                 console.error(
